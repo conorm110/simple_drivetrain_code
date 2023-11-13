@@ -30,6 +30,7 @@ public class Drivetrain extends SubsystemBase {
     // Initilize variables of the Drivetrain class 
     leftMotor = new CANSparkMax(2, MotorType.kBrushed);
     rightMotor = new CANSparkMax(3, MotorType.kBrushed);
+    rightMotor.setInverted(true);
 
     controller = new XboxController(0);
 
@@ -60,19 +61,20 @@ public class Drivetrain extends SubsystemBase {
   public CommandBase exampleMethodCommand() {
     // Inline construction of command goes here.
     // Subsystem::RunOnce implicitly requires `this` subsystem.
-    return runOnce(
+    return run(
         () -> {
-          /* This is where the code that gets run when the command is called goes*/
+          // Command code goes here
         });
   }
+
+  
 
   /**
    * Example condition, this is used in RobotContainer.java to determine if exampleMethodCommand can be run.
    * Also left here as a template for later programming lessons but we wont be using it today
    */
   public boolean exampleCondition() {
-    boolean example = false;
-    return example;
+    return false;
   }
 
   // We will not be using the simulationPeriodic methoc
