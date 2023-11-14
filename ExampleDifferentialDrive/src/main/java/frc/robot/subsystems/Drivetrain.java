@@ -30,7 +30,6 @@ public class Drivetrain extends SubsystemBase {
     // Initilize variables of the Drivetrain class 
     leftMotor = new CANSparkMax(2, MotorType.kBrushed);
     rightMotor = new CANSparkMax(3, MotorType.kBrushed);
-    rightMotor.setInverted(true);
 
     controller = new XboxController(0);
 
